@@ -60,4 +60,4 @@ Requires a PHP + MySQL environment (e.g., XAMPP) to run the backend and database
 
 ## License
 
-Developed as a senior project at the Lebanese International University. Add a license here if you'd like to open it up for reuse (e.g., MIT, Apache 2.0).
+Developed as a senior project at the Lebanese International University. 
