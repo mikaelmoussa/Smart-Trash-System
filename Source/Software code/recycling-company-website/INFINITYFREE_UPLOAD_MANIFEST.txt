@@ -1,0 +1,23 @@
+InfinityFree upload checklist (copy these files/folders to your InfinityFree web folder)
+
+1) Backend (Flask)
+- app.py
+- bins.db  (optional but recommended so bins/user data persist; if you don’t have it, create/upload it)
+
+2) Frontend (HTML/JS/CSS)
+- index.html
+- script.js
+- style.css
+- sw.js
+
+3) Static assets folder
+- static/
+  - include everything inside static/ (admin.html, user.html, admin*.js, lib/, etc.)
+
+Expected paths in your HTML/JS:
+- All assets are referenced as /static/...
+
+Run server
+- Use your InfinityFree Python hosting “start command” with the entrypoint app.py.
+- Ensure it runs Flask on 0.0.0.0 (already updated in app.py).
+

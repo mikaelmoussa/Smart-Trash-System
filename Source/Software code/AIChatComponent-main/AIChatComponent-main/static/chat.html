@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div id="chat-container">
+        <div id="header">AI Assistant</div>
+
+        <div id="pre-chat-container">
+            <h3>Welcome!</h3>
+            <p>Please enter your name and email to start chatting.</p>
+            <form id="pre-chat-form">
+                <input type="text" id="name-input" placeholder="Your Name" required>
+                <input type="email" id="email-input" placeholder="Your Email" required>
+                <button type="submit">Start Chat</button>
+            </form>
+        </div>
+
+        <div id="messages" class="hidden"></div>
+        <div id="input-container" class="hidden">
+            <form id="message-form">
+                <input type="text" id="message-input" placeholder="Ask something..." autocomplete="off" required>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Form and container elements
+        const preChatForm = document.getElementById('pre-chat-form');
+        const preChatContainer = document.getElementById('pre-chat-container');
+        const messageForm = document.getElementById('message-form');
+        const messagesContainer = document.getElementById('messages');
+        const inputContainer = document.getElementById('input-container');
+        const messageInput = document.getElementById('message-input');
+
+        // To store user details
+        let userName = '';
+        let userEmail = '';
+
+        // --- Step 1: Handle the pre-chat form submission ---
+        preChatForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            userName = document.getElementById('name-input').value.trim();
+            userEmail = document.getElementById('email-input').value.trim();
+
+            if (userName && userEmail) {
+                // Hide the pre-chat form
+                preChatContainer.classList.add('hidden');
+
+                // Show the main chat interface
+                messagesContainer.classList.remove('hidden');
+                inputContainer.classList.remove('hidden');
+
+                // Display a personalized welcome message
+                displayMessage(`Hello ${userName}! How can I help you today?`, 'ai');
+            }
+        });
+
+        // --- Step 2: Handle the main chat message form submission ---
+        messageForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const userInput = messageInput.value.trim();
+            if (!userInput) return;
+
+            displayMessage(userInput, 'user');
+            messageInput.value = '';
+
+            const typingIndicator = showTypingIndicator();
+
+            try {
+                // --- MODIFICATION: Pass name and email as query parameters ---
+                const apiUrl = `/get_answer?query=${encodeURIComponent(userInput)}&name=${encodeURIComponent(userName)}&email=${encodeURIComponent(userEmail)}`;
+                
+                const response = await fetch(apiUrl);
+                if (!response.ok) throw new Error('Network response was not ok');
+                
+                const data = await response.json();
+                
+                typingIndicator.remove();
+                displayMessage(data.Answer, 'ai');
+
+            } catch (error) {
+                console.error('Fetch error:', error);
+                typingIndicator.remove();
+                displayMessage('Sorry, something went wrong. Please try again.', 'ai');
+            }
+        });
+
+        function displayMessage(message, sender) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add(`${sender}-message`);
+            messageElement.textContent = message;
+            messagesContainer.appendChild(messageElement);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function showTypingIndicator() {
+            const typingElement = document.createElement('div');
+            typingElement.classList.add('ai-message', 'typing');
+            typingElement.innerHTML = '<span></span><span></span><span></span>';
+            messagesContainer.appendChild(typingElement);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            return typingElement;
+        }
+    </script>
+</body>
+</html>

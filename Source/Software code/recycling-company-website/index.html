@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LebRecycle - Smart Recycling Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="static/lib/leaflet.css">
+
+    <script src="static/lib/leaflet.js"></script>
+    <script src="static/lib/chart.min.js"></script>
+
+
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-recycle"></i> LebRecycle</h1>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#product">Product</a>
+                <a href="#map">Bins Map</a>
+                <a href="#stats">Statistics</a>
+                <a href="#company-about">About</a>
+                <a href="/user" class="nav-ai-support" id="topUserBtn">Log in</a>
+
+                <a href="#" class="nav-ai-support" id="topChatBtn">AI Support</a>
+
+            </nav>
+
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+
+            <div class="hero-main">
+                <div class="hero-title-section">
+                    <h2>Smart Auto-Sorting Recycling Bins</h2>
+                </div>
+                <div class="hero-text">
+                    <p>Revolutionizing Lebanon's waste management with AI-powered smart bins</p>
+                    <h3>Lebanon Waste Crisis</h3>
+                    <ul>
+                        <li><strong>7,000 tons</strong> daily waste</li>
+                        <li><strong>15%</strong> recycled only</li>
+                        <li><strong>85%</strong> to landfills</li>
+                    </ul>
+                    <p>Join our mission to reach <strong>50% recycling by 2030!</strong></p>
+                </div>
+                <div class="hero-visual">
+                    <canvas id="heroWasteChart" width="250" height="250"></canvas>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="product" class="about">
+        <div class="container">
+            <h2>Our Innovative Technology</h2>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-robot"></i>
+                    <h3>AI Sorting</h3>
+                    <p>Automatically sorts plastic, paper, glass, Metals using computer vision.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h3>Real-time Monitoring</h3>
+                    <p>Tracks fill levels: Normal, Full, Maintenance status.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>
+                        <a href="/user" class="nav-ai-support" style="pointer-events:auto; color:#1B5E20; text-decoration:none;">Earn Points</a>
+                    </h3>
+                    <p>Log in to earn points by submitting your recycling.</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="map" class="map-section">
+        <div class="container">
+            <h2>Live Bins Map - Lebanon</h2>
+            <div id="map"></div>
+        </div>
+    </section>
+
+    <section id="stats" class="stats">
+        <div class="container">
+            <h2>Our Impact Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>1,200+</h3>
+                    <p>Smart Bins Deployed</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-recycle"></i>
+                    <h3>450 tons</h3>
+                    <p>Waste Recycled YTD</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>2,500</h3>
+                    <p>Trees Saved</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-co2"></i>
+                    <h3>1,200t</h3>
+                    <p>CO2 Emissions Reduced</p>
+                </div>
+            </div>
+            <div class="charts">
+                <div class="chart-container">
+                    <h4>Recycled Waste Trend</h4>
+                    <canvas id="recycledChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h4>Waste Composition</h4>
+                    <canvas id="trashChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="company-about" class="company-about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>LebRecycle is transforming Lebanon's waste crisis into opportunity through innovative smart bins technology.</p>
+            <div class="company-info">
+                <div class="info-item">
+                    <h3>Team</h3>
+                    <ul>
+                        <li>Mikael Moussa - Ali Hamieh</li>
+                        <li>Lebanese International University</li>
+                    </ul>
+                </div>
+                <div class="info-item">
+                    <h3>Contact</h3>
+
+                    <p><a href="mailto:mikaelsmoussa@gmail.com">mikaelsmoussa@gmail.com</a></p>
+                    <p><a href="mailto:alihamieh119@gmail.com">alihamieh119@gmail.com</a></p>
+
+                    <p>Phone: +961 1 234 567</p>
+                    <p>Saida, Lebanon</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 LebRecycle - Building Lebanon's Green Future</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <button id="chatBtn" class="chat-btn" title="AI Customer Support">
+        <i class="fas fa-headset"></i>
+    </button>
+
+    <div id="sideChat" class="side-chat-panel">
+        <iframe src="static/recycling-chat.html" class="side-chat-iframe"></iframe>
+    </div>
+</body>
+
+
+
+
+
+</html>
+
+
+

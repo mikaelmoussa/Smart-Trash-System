@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LebRecycle - Admin Bins</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="/static/lib/leaflet.css" />
+  <script src="/static/lib/leaflet.js"></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1><i class="fas fa-recycle"></i> LebRecycle Admin</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/admin/bins">Bins</a>
+        <a href="/admin/users">Users</a>
+        <a href="#" id="logoutLink">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Reuse the existing bins UI (old admin.html moved under /admin/bins) -->
+  <main class="container" style="padding: 120px 0 24px 0; min-height: calc(100vh - 80px);">
+    <section id="loginView" class="card" style="max-width: 520px; margin: 0 auto;">
+      <h2>Admin Login</h2>
+
+      <div class="form-row">
+        <label for="username">Username</label>
+        <input id="username" type="text" autocomplete="username" value="" />
+      </div>
+
+      <div class="form-row">
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="current-password" value="" />
+      </div>
+
+      <button id="loginBtn" class="btn btn-primary" style="width: 100%; margin-top: 12px;">Login</button>
+      <p id="loginMsg" class="muted" style="margin-top: 12px;"></p>
+    </section>
+
+    <section id="adminView" style="display:none;">
+      <div class="card" style="margin-bottom: 16px;">
+        <div style="display:flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+          <h2 style="margin: 0;">Bins Map & Maintenance</h2>
+          <span id="authState" class="muted" style="margin-left: auto;"></span>
+          <button id="refreshBtn" class="btn" type="button">Refresh</button>
+        </div>
+        <p class="muted" style="margin: 8px 0 0;">
+          Click on the map to <strong>add</strong> a bin. Click a marker to <strong>edit / delete</strong> it.
+        </p>
+      </div>
+
+      <div class="card" style="margin-bottom: 12px;">
+        <h3>Live Status</h3>
+        <div id="statsGrid" style="display:grid; grid-template-columns: repeat(3, minmax(180px, 1fr)); gap: 12px;">
+          <div class="stat-card"><i class="fas fa-check-circle"></i><h4>Normal</h4><p id="countNormal">0</p></div>
+          <div class="stat-card"><i class="fas fa-exclamation-triangle"></i><h4>Full</h4><p id="countFull">0</p></div>
+          <div class="stat-card"><i class="fas fa-tools"></i><h4>Maintenance</h4><p id="countMaintenance">0</p></div>
+        </div>
+      </div>
+
+      <div class="card" style="padding:0;">
+        <div id="adminMap" style="height: 520px;"></div>
+      </div>
+
+      <div class="card" style="margin-top: 12px;">
+        <h3>Edit Bins</h3>
+        <div id="binList" class="bin-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Add/Edit Side Panel -->
+  <aside id="binModal" class="bin-side-panel" style="display:none;">
+    <div class="side-panel-header">
+      <div style="display:flex; align-items:center; justify-content:space-between; gap: 12px;">
+        <h3 id="modalTitle" style="margin:0;">Add Bin</h3>
+        <button id="modalClose" class="btn" type="button">&times;</button>
+      </div>
+    </div>
+
+    <div class="side-panel-body">
+      <form id="binForm" onsubmit="return false;">
+        <input type="hidden" id="binId" />
+        <div class="form-row">
+          <label for="binName">Name</label>
+          <input id="binName" type="text" placeholder="e.g. Beirut Central" required />
+        </div>
+
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div class="form-row">
+            <label for="binLat">Latitude</label>
+            <input id="binLat" type="number" step="any" required />
+          </div>
+          <div class="form-row">
+            <label for="binLng">Longitude</label>
+            <input id="binLng" type="number" step="any" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="binStatus">Status</label>
+          <select id="binStatus" required>
+            <option value="normal">normal</option>
+            <option value="full">full</option>
+            <option value="maintenance">maintenance</option>
+          </select>
+        </div>
+
+        <div style="display:flex; gap: 12px; margin-top: 12px;">
+          <button id="saveBtn" class="btn btn-primary" type="submit" style="flex: 1;">Save</button>
+          <button id="deleteBtn" class="btn btn-danger" type="button" style="flex: 1; display:none;">Delete</button>
+        </div>
+
+        <p id="modalMsg" class="muted" style="margin-top: 12px;"></p>
+      </form>
+    </div>
+  </aside>
+
+  <script src="/static/admin.js"></script>
+</body>
+</html>
+

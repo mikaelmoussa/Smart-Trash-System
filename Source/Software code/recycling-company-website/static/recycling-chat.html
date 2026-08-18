@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recycling AI Support</title>
+    <link rel="stylesheet" href="recycling-style.css">
+</head>
+<body>
+    <div id="chat-container">
+        <div id="header">AI Customer Support</div>
+
+        <div id="pre-chat-container">
+            <h3>Welcome to Recycling Support!</h3>
+            <p>Please enter your name and email to start chatting.</p>
+            <form id="pre-chat-form">
+                <input type="text" id="name-input" placeholder="Your Name" required>
+                <input type="email" id="email-input" placeholder="Your Email" required>
+                <button type="submit">Start Chat</button>
+            </form>
+        </div>
+
+        <div id="messages" class="hidden"></div>
+        <div id="input-container" class="hidden">
+            <form id="message-form">
+                <input type="text" id="message-input" placeholder="Ask about recycling bins, locations, stats..." autocomplete="off" required>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const preChatForm = document.getElementById('pre-chat-form');
+        const preChatContainer = document.getElementById('pre-chat-container');
+        const messageForm = document.getElementById('message-form');
+        const messagesContainer = document.getElementById('messages');
+        const inputContainer = document.getElementById('input-container');
+        const messageInput = document.getElementById('message-input');
+
+        let userName = '';
+        let userEmail = '';
+
+        preChatForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            userName = document.getElementById('name-input').value.trim();
+            userEmail = document.getElementById('email-input').value.trim();
+
+            if (userName && userEmail) {
+                preChatContainer.classList.add('hidden');
+                messagesContainer.classList.remove('hidden');
+                inputContainer.classList.remove('hidden');
+                displayMessage(`Hello ${userName}! Ask me about recycling bins, Lebanon waste stats, or nearest locations!`, 'ai');
+            }
+        });
+
+        messageForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const userInput = messageInput.value.trim();
+            if (!userInput) return;
+
+            displayMessage(userInput, 'user');
+            messageInput.value = '';
+
+            const typingIndicator = showTypingIndicator();
+
+            try {
+                const apiUrl = `/get_answer?query=${encodeURIComponent(userInput)}&name=${encodeURIComponent(userName)}&email=${encodeURIComponent(userEmail)}`;
+                const response = await fetch(apiUrl);
+                if (!response.ok) throw new Error('Network response was not ok');
+
+                const data = await response.json();
+
+                typingIndicator.remove();
+                displayMessage(data.Answer, 'ai');
+            } catch (error) {
+                console.error('Fetch error:', error);
+                typingIndicator.remove();
+                displayMessage('Sorry, something went wrong. Please try again or refresh.', 'ai');
+            }
+        });
+
+        function displayMessage(message, sender) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add(`${sender}-message`);
+            messageElement.textContent = message;
+            messagesContainer.appendChild(messageElement);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function showTypingIndicator() {
+            const typingElement = document.createElement('div');
+            typingElement.classList.add('ai-message', 'typing');
+            typingElement.innerHTML = '<span></span><span></span><span></span>';
+            messagesContainer.appendChild(typingElement);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            return typingElement;
+        }
+    </script>
+</body>
+</html>
+

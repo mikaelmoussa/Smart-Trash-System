@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../AIChatComponent-main"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "recycling-company-website"
+	}
+}

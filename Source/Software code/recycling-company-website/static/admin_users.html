@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LebRecycle - Admin Users</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1><i class="fas fa-users"></i> LebRecycle Admin</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/admin/bins">Bins</a>
+        <a href="/admin/users">Users</a>
+        <a href="#" id="logoutLink">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="padding: 120px 0 24px 0; min-height: calc(100vh - 80px);">
+    <section id="loginView" class="card" style="max-width: 520px; margin: 0 auto;">
+      <h2>Admin Login</h2>
+
+      <div class="form-row">
+        <label for="username">Username</label>
+        <input id="username" type="text" autocomplete="username" value="" />
+      </div>
+
+      <div class="form-row">
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="current-password" value="" />
+      </div>
+
+      <button id="loginBtn" class="btn btn-primary" style="width: 100%; margin-top: 12px;">Login</button>
+      <p id="loginMsg" class="muted" style="margin-top: 12px;"></p>
+    </section>
+
+    <section id="adminView" style="display:none;">
+      <div class="card" style="margin-bottom: 16px; padding: 16px;">
+        <div style="display:flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+          <h2 style="margin: 0;">Users Accounts</h2>
+          <span id="authState" class="muted" style="margin-left: auto;"></span>
+          <button id="refreshBtn" class="btn" type="button">Refresh</button>
+        </div>
+        <p class="muted" style="margin: 8px 0 0;">
+          Delete a user. Optionally delete their recycling history too.
+        </p>
+      </div>
+
+      <div class="card" style="padding: 16px;">
+        <div style="overflow:auto; border:1px solid #eee; border-radius: 10px;">
+          <table style="width:100%; border-collapse: collapse;">
+            <thead>
+              <tr style="background:#f8f9fa;">
+                <th style="text-align:left; padding:10px; border-bottom:1px solid #eee;">Username</th>
+                <th style="text-align:left; padding:10px; border-bottom:1px solid #eee;">Total Points</th>
+                <th style="text-align:left; padding:10px; border-bottom:1px solid #eee;">Recent Entries</th>
+                <th style="text-align:left; padding:10px; border-bottom:1px solid #eee;">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="userListBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/static/admin_users.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,121 @@
+2026-02-12 21:36:09,231 - ERROR - Error during Llama Guard safety check for query 'User: swhat is the we': 'GroqLLM' object is not callable
+2026-02-12 21:36:09,232 - INFO - Client: 127.0.0.1 - User: Paul (chbatpaul@gmail.com) - Server: 127.0.0.1 - Request Time: 21:36:09.195 - Query: 'swhat is the we' - Generated Answer: 'I cannot help you with this request.'
+2026-02-12 21:36:39,510 - ERROR - Error during Llama Guard safety check for query 'User: hi': 'GroqLLM' object is not callable
+2026-02-12 21:36:39,510 - INFO - Client: 127.0.0.1 - User: Paul (chbatpaul@gmail.com) - Server: 127.0.0.1 - Request Time: 21:36:39.502 - Query: 'hi' - Generated Answer: 'I cannot help you with this request.'
+2026-02-12 21:40:52,866 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-12 21:40:52,892 - INFO - Llama Guard passed [SAFE]: User: hi
+2026-02-12 21:40:53,153 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-02-12 21:40:53,154 - ERROR - Groq API call failed: Error code: 400 - {'error': {'message': 'The model `llama3-8b-8192` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-02-12 21:40:53,154 - ERROR - Failed to generate answer for pchbat@exeo.net: Error code: 400 - {'error': {'message': 'The model `llama3-8b-8192` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-02-12 21:40:53,154 - INFO - Client: 127.0.0.1 - User: Paul (pchbat@exeo.net) - Server: 127.0.0.1 - Request Time: 21:40:52.070 - Query: 'hi' - Generated Answer: 'I'm sorry, I am currently unable to process your request.'
+2026-02-12 21:45:59,490 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-12 21:45:59,513 - INFO - Llama Guard passed [SAFE]: User: hi
+2026-02-12 21:45:59,898 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-12 21:45:59,899 - INFO - Client: 127.0.0.1 - User: Paul (pchbat@exeo.net) - Server: 127.0.0.1 - Request Time: 21:45:55.874 - Query: 'hi' - Generated Answer: 'Hi Paul! Thanks for reaching out. How can I assist you today? Feel free to let me know any questions or issues you’re experiencing, and I’ll be happy to help.'
+2026-03-18 12:27:40,681 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-03-18 12:27:40,682 - ERROR - Groq API call failed: Error code: 400 - {'error': {'message': 'The model `meta-llama/llama-guard-4-12b` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-18 12:27:40,682 - ERROR - Safety check failed: Error code: 400 - {'error': {'message': 'The model `meta-llama/llama-guard-4-12b` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-18 12:27:40,682 - INFO - Client: 127.0.0.1 - User: Mikael (mikaelmoussa@gmail.com) - Server: 127.0.0.1 - Request Time: 12:27:39.115 - Query: 'hello' - Generated Answer: 'I cannot help you with this request.'
+2026-03-18 12:27:45,018 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-03-18 12:27:45,018 - ERROR - Groq API call failed: Error code: 400 - {'error': {'message': 'The model `meta-llama/llama-guard-4-12b` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-18 12:27:45,018 - ERROR - Safety check failed: Error code: 400 - {'error': {'message': 'The model `meta-llama/llama-guard-4-12b` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-18 12:27:45,018 - INFO - Client: 127.0.0.1 - User: Mikael (mikaelmoussa@gmail.com) - Server: 127.0.0.1 - Request Time: 12:27:44.769 - Query: 'why' - Generated Answer: 'I cannot help you with this request.'
+2026-03-18 12:27:50,109 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-03-18 12:27:50,110 - ERROR - Groq API call failed: Error code: 400 - {'error': {'message': 'The model `meta-llama/llama-guard-4-12b` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-18 12:27:50,110 - ERROR - Safety check failed: Error code: 400 - {'error': {'message': 'The model `meta-llama/llama-guard-4-12b` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-18 12:27:50,110 - INFO - Client: 127.0.0.1 - User: Mikael (mikaelmoussa@gmail.com) - Server: 127.0.0.1 - Request Time: 12:27:49.847 - Query: 'what happend' - Generated Answer: 'I cannot help you with this request.'
+2026-03-18 12:29:36,479 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-03-18 12:29:36,479 - ERROR - Groq API call failed: Error code: 400 - {'error': {'message': 'The model `meta-llama/llama-guard-4-12b` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-18 12:29:36,479 - ERROR - Safety check failed: Error code: 400 - {'error': {'message': 'The model `meta-llama/llama-guard-4-12b` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-18 12:29:36,479 - INFO - Client: 127.0.0.1 - User: Mikael (mikaelmoussa@gmail.com) - Server: 127.0.0.1 - Request Time: 12:29:36.212 - Query: 'hello' - Generated Answer: 'I cannot help you with this request.'
+2026-03-18 12:29:45,710 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-03-18 12:29:45,711 - ERROR - Groq API call failed: Error code: 400 - {'error': {'message': 'The model `meta-llama/llama-guard-4-12b` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-18 12:29:45,711 - ERROR - Safety check failed: Error code: 400 - {'error': {'message': 'The model `meta-llama/llama-guard-4-12b` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-18 12:29:45,711 - INFO - Client: 127.0.0.1 - User: Mikael (mikaelmoussa@gmail.com) - Server: 127.0.0.1 - Request Time: 12:29:45.458 - Query: 'who won the wc in 2014' - Generated Answer: 'I cannot help you with this request.'
+2026-03-18 12:34:52,495 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-03-18 12:34:52,495 - ERROR - Groq API call failed: Error code: 400 - {'error': {'message': 'The model `meta-llama/llama-guard-4-12b` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-18 12:34:52,495 - ERROR - Safety check failed: Error code: 400 - {'error': {'message': 'The model `meta-llama/llama-guard-4-12b` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-18 12:34:53,151 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-18 12:34:53,183 - INFO - Client: 127.0.0.1 - User: Mikael (mikaelmoussa@gmail.com) - Server: 127.0.0.1 - Request Time: 12:34:50.375 - Query: 'hello' - Generated Answer: 'Hello Mikael! \U0001f44b How can I assist you today?'
+2026-03-18 12:34:59,266 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-03-18 12:34:59,266 - ERROR - Groq API call failed: Error code: 400 - {'error': {'message': 'The model `meta-llama/llama-guard-4-12b` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-18 12:34:59,266 - ERROR - Safety check failed: Error code: 400 - {'error': {'message': 'The model `meta-llama/llama-guard-4-12b` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-18 12:34:59,938 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-18 12:34:59,939 - INFO - Client: 127.0.0.1 - User: Mikael (mikaelmoussa@gmail.com) - Server: 127.0.0.1 - Request Time: 12:34:58.864 - Query: 'how are you' - Generated Answer: 'Hi Mikael! I’m doing great, thank you for asking. How can I assist you today?'
+2026-03-18 12:35:18,977 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-03-18 12:35:18,978 - ERROR - Groq API call failed: Error code: 400 - {'error': {'message': 'The model `meta-llama/llama-guard-4-12b` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-18 12:35:18,978 - ERROR - Safety check failed: Error code: 400 - {'error': {'message': 'The model `meta-llama/llama-guard-4-12b` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-18 12:35:19,818 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-18 12:35:19,819 - INFO - Client: 127.0.0.1 - User: Mikael (mikaelmoussa@gmail.com) - Server: 127.0.0.1 - Request Time: 12:35:18.616 - Query: 'who won the word cup in 2014' - Generated Answer: 'Hi Mikael,
+
+The 2014 FIFA World Cup was won by **Germany**. They defeated Argentina 1\u20110 in the final, with the winning goal scored by Mario\u202fGötze in extra time.  
+
+Let me know if you’d like more details about the tournament!'
+2026-03-18 12:37:13,305 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-03-18 12:37:13,305 - ERROR - Groq API call failed: Error code: 400 - {'error': {'message': 'The model `meta-llama/llama-guard-4-12b` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-18 12:37:13,306 - ERROR - Safety check failed: Error code: 400 - {'error': {'message': 'The model `meta-llama/llama-guard-4-12b` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-18 12:37:14,572 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-18 12:37:14,582 - INFO - Client: 127.0.0.1 - User: Mikael (mikaelmoussa@gmail.com) - Server: 127.0.0.1 - Request Time: 12:37:12.939 - Query: 'how won the olympics' - Generated Answer: 'Hi Mikael!  
+
+The Olympic Games don’t have a single “winner” – athletes compete in hundreds of individual events, and each event crowns its own champion (gold\u2011medal winner).  
+
+What people often look at is the **medal table**, which ranks countries by the total number of gold, silver and bronze medals their athletes earn.  
+
+**Recent highlights**
+
+| Games | Top\u2011ranked country (most golds) | Total medals |
+|-------|--------------------------------|--------------|
+| **Paris 2024 (Summer)** – still underway (July\u202f2024) | *To be determined – check the live medal table* | — |
+| **Tokyo 2020 (held 2021)** | United States | 113 (Gold\u202f39, Silver\u202f41, Bronze\u202f33) |
+| **Beijing 2022 (Winter)** | Norway | 37 (Gold\u202f16, Silver\u202f8, Bronze\u202f13) |
+| **PyeongChang 2018 (Winter)** | Norway | 39 (Gold\u202f14, Silver\u202f14, Bronze\u202f11) |
+| **Rio 2016 (Summer)** | United States | 121 (Gold\u202f46, Silver\u202f37, Bronze\u202f38) |
+
+If you’re curious about a specific sport (e.g., swimming, gymnastics, track & field) or a particular athlete, just let me know and I can give you the exact gold\u2011medalist for that event.
+
+**Quick way to stay updated**  
+Visit the official Olympic website (olympics.com) or the live\u2011updates page on the BBC/ESPN for the most current medal counts and event results.
+
+Hope that helps! Feel free to ask if you want details on a specific event or athlete. \U0001f31f'
+2026-03-18 13:23:04,944 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-03-18 13:23:04,945 - ERROR - Groq API call failed: Error code: 400 - {'error': {'message': 'The model `meta-llama/llama-guard-4-12b` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-18 13:23:04,945 - ERROR - Safety check failed: Error code: 400 - {'error': {'message': 'The model `meta-llama/llama-guard-4-12b` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-18 13:23:05,694 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-18 13:23:05,712 - INFO - Client: 127.0.0.1 - User: Mikael (mikaelmoussa@gmail.com) - Server: 127.0.0.1 - Request Time: 13:23:02.846 - Query: 'hellos' - Generated Answer: 'Hello Mikael! How can I assist you today?'
+2026-03-18 13:23:14,755 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-03-18 13:23:14,755 - ERROR - Groq API call failed: Error code: 400 - {'error': {'message': 'The model `meta-llama/llama-guard-4-12b` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-18 13:23:14,756 - ERROR - Safety check failed: Error code: 400 - {'error': {'message': 'The model `meta-llama/llama-guard-4-12b` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-18 13:23:16,063 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-18 13:23:16,065 - INFO - Client: 127.0.0.1 - User: Mikael (mikaelmoussa@gmail.com) - Server: 127.0.0.1 - Request Time: 13:23:14.026 - Query: 'hello' - Generated Answer: 'Hello Mikael! How can I help you today?'
+2026-03-18 13:23:28,968 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-03-18 13:23:28,969 - ERROR - Groq API call failed: Error code: 400 - {'error': {'message': 'The model `meta-llama/llama-guard-4-12b` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-18 13:23:28,969 - ERROR - Safety check failed: Error code: 400 - {'error': {'message': 'The model `meta-llama/llama-guard-4-12b` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-18 13:23:30,618 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-18 13:23:30,619 - INFO - Client: 127.0.0.1 - User: Mikael (mikaelmoussa@gmail.com) - Server: 127.0.0.1 - Request Time: 13:23:28.307 - Query: 'what is the time in usa' - Generated Answer: 'Hi Mikael,
+
+The United\u202fStates spans several time zones, so the current time depends on the region you’re interested in. Here’s a quick snapshot of the main zones (all times are shown as of the moment you read this, so you may want to double\u2011check with a world\u2011clock app for exact seconds):
+
+| Time Zone | Major Cities | UTC Offset |
+|-----------|--------------|------------|
+| Eastern (ET) | New\u202fYork, Washington\u202fDC, Atlanta | UTC\u202f\u2011\u202f5\u202fh (UTC\u202f\u2011\u202f4\u202fh during Daylight Saving Time) |
+| Central (CT) | Chicago, Dallas, Houston | UTC\u202f\u2011\u202f6\u202fh (UTC\u202f\u2011\u202f5\u202fh DST) |
+| Mountain (MT) | Denver, Phoenix* | UTC\u202f\u2011\u202f7\u202fh (UTC\u202f\u2011\u202f6\u202fh DST; note Arizona does not observe DST) |
+| Pacific (PT) | Los\u202fAngeles, Seattle, San\u202fFrancisco | UTC\u202f\u2011\u202f8\u202fh (UTC\u202f\u2011\u202f7\u202fh DST) |
+| Alaska (AKT) | Anchorage | UTC\u202f\u2011\u202f9\u202fh (UTC\u202f\u2011\u202f8\u202fh DST) |
+| Hawaii\u2011Aleutian (HAT) | Honolulu | UTC\u202f\u2011\u202f10\u202fh (no DST) |
+
+If you let me know a specific city or state, I can give you the exact local time right now. Otherwise, a quick way to see the current time for any U.S. location is to search “current time in\u202f[city]” or use a world\u2011clock feature on your phone/computer.
+
+Hope that helps! Let me know if you need anything else. \U0001f31f'
+2026-03-18 13:28:30,015 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-03-18 13:28:30,015 - ERROR - Groq API call failed: Error code: 400 - {'error': {'message': 'The model `meta-llama/llama-guard-4-12b` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-18 13:28:30,016 - ERROR - Safety check failed: Error code: 400 - {'error': {'message': 'The model `meta-llama/llama-guard-4-12b` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-18 13:28:30,744 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-18 13:28:30,745 - INFO - Client: 127.0.0.1 - User: Mikael (mikaelmoussa@gmail.com) - Server: 127.0.0.1 - Request Time: 13:28:28.115 - Query: 'hello' - Generated Answer: 'Hello Mikael! \U0001f44b How can I help you today?'
+2026-03-18 13:28:53,763 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-03-18 13:28:53,763 - ERROR - Groq API call failed: Error code: 400 - {'error': {'message': 'The model `meta-llama/llama-guard-4-12b` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-18 13:28:53,764 - ERROR - Safety check failed: Error code: 400 - {'error': {'message': 'The model `meta-llama/llama-guard-4-12b` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-18 13:28:55,597 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-18 13:28:55,598 - INFO - Client: 127.0.0.1 - User: Mikael (mikaelmoussa@gmail.com) - Server: 127.0.0.1 - Request Time: 13:28:53.095 - Query: 'who won the wc in 2014' - Generated Answer: 'Hi Mikael,
+
+The 2014 FIFA World Cup was won by **Germany**. They defeated Argentina 1\u20110 in the final, with the winning goal scored by Mario\u202fGötze in extra time.'
